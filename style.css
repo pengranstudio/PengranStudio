@@ -409,3 +409,103 @@ html, body {
     height: 72px;
   }
 }
+
+
+.traffic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.traffic-card {
+  background: #fff;
+  border: 1px solid #eee4da;
+  border-radius: 18px;
+  padding: 30px 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.traffic-card h2,
+.map-section h2 {
+  margin: 0 0 20px;
+  font-size: 26px;
+  color: #3b3028;
+  border-left: 4px solid #b98973;
+  padding-left: 12px;
+}
+
+.traffic-info-list p {
+  margin: 0 0 14px;
+  line-height: 1.9;
+  font-size: 17px;
+  color: #2f2f2f;
+}
+
+.traffic-info-list a {
+  color: #7b4d3a;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.traffic-info-list a:hover {
+  border-bottom-color: #7b4d3a;
+}
+
+.traffic-note-card {
+  margin-bottom: 28px;
+}
+
+.traffic-note {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #2f2f2f;
+}
+
+.map-section {
+  background: #fff;
+  border: 1px solid #eee4da;
+  border-radius: 18px;
+  padding: 30px 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.map-wrap {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.map-wrap iframe {
+  display: block;
+  width: 100%;
+  min-height: 450px;
+}
+
+@media (max-width: 768px) {
+  .traffic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .traffic-card,
+  .map-section {
+    padding: 24px 18px;
+    border-radius: 14px;
+  }
+
+  .traffic-card h2,
+  .map-section h2 {
+    font-size: 22px;
+  }
+
+  .traffic-info-list p,
+  .traffic-note {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .map-wrap iframe {
+    min-height: 320px;
+  }
+}
