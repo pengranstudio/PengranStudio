@@ -207,8 +207,17 @@ html, body {
 }
 
 @media (max-width: 768px) {
+   .hero {
+    height: 34vh;
+  }
+
   .hero-small {
-    height: 28vh;
+    height: 24vh;
+  }
+
+  .hero-image {
+    object-fit: cover;
+    object-position: 58% center;
   }
 
   .content-page {
