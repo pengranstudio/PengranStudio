@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  background-color: #f8f6f3;
+  color: #2b2b2b;
+}
+
+.hero {
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+  padding: 20px 16px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e8e2db;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #3b3028;
+  font-size: 17px;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.main-nav a:hover {
+  opacity: 0.65;
+}
+
+.home-section {
+  padding: 56px 20px 80px;
+}
+
+.booking-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.booking-section h2 {
+  margin: 0 0 20px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #2f241d;
+}
+
+.booking-text {
+  margin: 0 0 28px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.booking-text a {
+  color: #7b4d3a;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.booking-text a:hover {
+  border-bottom-color: #7b4d3a;
+}
+
+.calendar-wrap {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.calendar-wrap iframe {
+  max-width: 100%;
+  background: #fff;
+}
+
+/* 手機版 */
+@media (max-width: 768px) {
+  .main-nav {
+    gap: 18px;
+    padding: 16px 10px;
+    flex-wrap: wap;
+  }
+
+  .main-nav a {
+    font-size: 15px;
+  }
+
+  .home-section {
+    padding: 36px 12px 56px;
+  }
+
+  .booking-section h2 {
+    font-size: 24px;
+  }
+
+  .booking-text {
+    font-size: 16px;
+  }
+
+  .calendar-wrap iframe {
+    width: 100%;
+    min-width: 320px;
+    height: 500px;
+  }
+}
