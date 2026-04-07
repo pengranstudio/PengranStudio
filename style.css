@@ -1,8 +1,12 @@
+/* ========================================
+   1. 全域設定
+======================================== */
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
@@ -10,19 +14,34 @@ html, body {
   color: #2b2b2b;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ========================================
+   2. Hero / 封面區
+======================================== */
 .hero {
   width: 100%;
-  height: 60vh; /* 關鍵：控制高度 */
+  height: 60vh;
   overflow: hidden;
+}
+
+.hero-small {
+  height: 42vh;
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 重點：裁切但不變形 */
+  object-fit: cover;
+  object-position: center center;
 }
 
-
+/* ========================================
+   3. 導覽列
+======================================== */
 .main-nav {
   display: flex;
   justify-content: center;
@@ -48,6 +67,24 @@ html, body {
   opacity: 0.65;
 }
 
+.main-nav a.active {
+  color: #7b4d3a;
+  position: relative;
+}
+
+.main-nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #7b4d3a;
+}
+
+/* ========================================
+   4. 首頁
+======================================== */
 .home-section {
   padding: 56px 20px 80px;
 }
@@ -94,42 +131,9 @@ html, body {
   background: #fff;
 }
 
-/* 手機版 */
-@media (max-width: 768px) {
-  .main-nav {
-    gap: 18px;
-    padding: 16px 10px;
-    flex-wrap: wap;
-  }
-
-  .main-nav a {
-    font-size: 15px;
-  }
-
-  .home-section {
-    padding: 36px 12px 56px;
-  }
-
-  .booking-section h2 {
-    font-size: 24px;
-  }
-
-  .booking-text {
-    font-size: 16px;
-  }
-
-  .calendar-wrap iframe {
-    width: 100%;
-    min-width: 320px;
-    height: 500px;
-  }
-}
-
-
-.hero-small {
-  height: 42vh;
-}
-
+/* ========================================
+   5. 內頁共用
+======================================== */
 .content-page {
   max-width: 1000px;
   margin: 0 auto;
@@ -154,6 +158,9 @@ html, body {
   color: #6b5b50;
 }
 
+/* ========================================
+   6. 注意事項頁
+======================================== */
 .notice-block {
   background: #fff;
   border: 1px solid #eee4da;
@@ -191,62 +198,9 @@ html, body {
   color: #8a6d5d;
 }
 
-.main-nav a.active {
-  color: #7b4d3a;
-  position: relative;
-}
-
-.main-nav a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 2px;
-  background: #7b4d3a;
-}
-
-@media (max-width: 768px) {
-   .hero {
-    height: 34vh;
-  }
-
-  .hero-small {
-    height: 24vh;
-  }
-
-  .hero-image {
-    object-fit: cover;
-    object-position: 58% center;
-  }
-
-  .content-page {
-    padding: 36px 14px 56px;
-  }
-
-  .page-header h1 {
-    font-size: 28px;
-  }
-
-  .page-header p {
-    font-size: 15px;
-  }
-
-  .notice-block {
-    padding: 24px 18px;
-    border-radius: 14px;
-  }
-
-  .notice-block h2 {
-    font-size: 22px;
-  }
-
-  .notice-list li {
-    font-size: 15px;
-    line-height: 1.85;
-  }
-}
-
+/* ========================================
+   7. 場景介紹頁
+======================================== */
 .scene-intro-card {
   display: grid;
   grid-template-columns: 1.6fr 1fr;
@@ -330,7 +284,6 @@ html, body {
   max-height: 620px;
   object-fit: cover;
   border-radius: 16px;
-  display: block;
 }
 
 .carousel-btn {
@@ -383,6 +336,9 @@ html, body {
   opacity: 1;
 }
 
+/* ========================================
+   8. 交通資訊頁
+======================================== */
 .traffic-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -455,7 +411,82 @@ html, body {
   min-height: 450px;
 }
 
+/* ========================================
+   9. RWD
+======================================== */
 @media (max-width: 768px) {
+  /* Hero */
+  .hero {
+    height: 34vh;
+  }
+
+  .hero-small {
+    height: 24vh;
+  }
+
+  .hero-image {
+    object-position: 58% center;
+  }
+
+  /* Nav */
+  .main-nav {
+    gap: 18px;
+    padding: 16px 10px;
+    flex-wrap: wrap;
+  }
+
+  .main-nav a {
+    font-size: 15px;
+  }
+
+  /* Home */
+  .home-section {
+    padding: 36px 12px 56px;
+  }
+
+  .booking-section h2 {
+    font-size: 24px;
+  }
+
+  .booking-text {
+    font-size: 16px;
+  }
+
+  .calendar-wrap iframe {
+    width: 100%;
+    min-width: 320px;
+    height: 500px;
+  }
+
+  /* Common Page */
+  .content-page {
+    padding: 36px 14px 56px;
+  }
+
+  .page-header h1 {
+    font-size: 28px;
+  }
+
+  .page-header p {
+    font-size: 15px;
+  }
+
+  /* Notice */
+  .notice-block {
+    padding: 24px 18px;
+    border-radius: 14px;
+  }
+
+  .notice-block h2 {
+    font-size: 22px;
+  }
+
+  .notice-list li {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  /* Scene */
   .scene-intro-card {
     grid-template-columns: 1fr;
   }
@@ -489,9 +520,8 @@ html, body {
   .thumb {
     height: 72px;
   }
-}
 
-@media (max-width: 768px) {
+  /* Traffic */
   .traffic-grid {
     grid-template-columns: 1fr;
   }
