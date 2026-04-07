@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>棚然心動</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="hero">
+  <img src="image/cover.png" alt="棚然心動封面" class="hero-image">
+</header>
+
+  <nav class="main-nav">
+    <a href="index.html">首頁</a>
+    <a href="notice.html">注意事項</a>
+    <a href="scenes.html" class="active">場景介紹</a>
+    <a href="traffic.html">交通資訊</a>
+  </nav>
+
+  <main class="content-page">
+    <section class="page-header">
+      <h1>場景介紹</h1>
+      <p>每一個場景，都是為了讓畫面更完整而存在。</p>
+    </section>
+
+    <section class="scene-intro-card">
+      <div class="scene-intro-text">
+        <h2>藍潮之境</h2>
+        <p class="scene-subtitle">Blue Tide Studio</p>
+
+        <div class="scene-info-list">
+          <p><strong>棚景費用：</strong>平日 $800 / hr、假日 $1000 / hr</p>
+          <p><strong>空間配置：</strong>面寬 375cm × 深 480cm × 高 308cm</p>
+          <p><strong>上限人數：</strong>5 人</p>
+        </div>
+      </div>
+
+      <div class="scene-intro-box">
+        <div class="scene-highlight">
+          <span>平日</span>
+          <strong>$800 / hr</strong>
+        </div>
+        <div class="scene-highlight">
+          <span>假日</span>
+          <strong>$1000 / hr</strong>
+        </div>
+        <div class="scene-highlight">
+          <span>容納</span>
+          <strong>5 人</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene-gallery-section">
+      <div class="carousel">
+        <button class="carousel-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+
+        <img id="mainSceneImage" src="images/Blue01.jpg" alt="藍潮之境照片" class="carousel-main-image">
+
+        <button class="carousel-btn next" onclick="changeSlide(1)">&#10095;</button>
+      </div>
+
+      <div class="thumbnail-row">
+        <img src="images/Blue01.jpg" onclick="setSlide(0)" class="thumb active-thumb" alt="Blue01">
+        <img src="images/Blue02.jpg" onclick="setSlide(1)" class="thumb" alt="Blue02">
+        <img src="images/Blue03.jpg" onclick="setSlide(2)" class="thumb" alt="Blue03">
+        <img src="images/Blue04.jpg" onclick="setSlide(3)" class="thumb" alt="Blue04">
+        <img src="images/Blue05.jpg" onclick="setSlide(4)" class="thumb" alt="Blue05">
+        <img src="images/Blue06.jpg" onclick="setSlide(5)" class="thumb" alt="Blue06">
+        <img src="images/Blue07.jpg" onclick="setSlide(6)" class="thumb" alt="Blue07">
+        <img src="images/Blue08.jpg" onclick="setSlide(7)" class="thumb" alt="Blue08">
+        <img src="images/Blue09.jpg" onclick="setSlide(8)" class="thumb" alt="Blue09">
+        <img src="images/Blue10.jpg" onclick="setSlide(9)" class="thumb" alt="Blue10">
+      </div>
+    </section>
+
+    <section class="notice-block">
+      <h2>注意事項</h2>
+      <ol class="notice-list">
+        <li>一盞 50w 全彩持續燈（不可移動）。</li>
+        <li>一盞 300w 全彩持續燈（可自由移動）。</li>
+        <li>貝殼充氣床僅限一人使用，並請勿蹦跳，若不當使用造成破損需照價賠償。</li>
+        <li>三組花朵裝飾可自由移動，請小心勿勾垂掛紗幔。</li>
+        <li>吊掛相框勿拉扯，地板放置相框可拿取使用。</li>
+        <li>鏡面紙易皺，請勿光腳踩踏。</li>
+      </ol>
+    </section>
+  </main>
+
+  <script>
+    const sceneImages = [
+      "images/Blue01.jpg",
+      "images/Blue02.jpg",
+      "images/Blue03.jpg",
+      "images/Blue04.jpg",
+      "images/Blue05.jpg",
+      "images/Blue06.jpg",
+      "images/Blue07.jpg",
+      "images/Blue08.jpg",
+      "images/Blue09.jpg",
+      "images/Blue10.jpg"
+    ];
+
+    let currentSlide = 0;
+
+    function updateSlide() {
+      document.getElementById("mainSceneImage").src = sceneImages[currentSlide];
+
+      const thumbs = document.querySelectorAll(".thumb");
+      thumbs.forEach((thumb, index) => {
+        thumb.classList.toggle("active-thumb", index === currentSlide);
+      });
+    }
+
+    function changeSlide(step) {
+      currentSlide += step;
+
+      if (currentSlide < 0) {
+        currentSlide = sceneImages.length - 1;
+      }
+
+      if (currentSlide >= sceneImages.length) {
+        currentSlide = 0;
+      }
+
+      updateSlide();
+    }
+
+    function setSlide(index) {
+      currentSlide = index;
+      updateSlide();
+    }
+  </script>
+
+</body>
+</html>
