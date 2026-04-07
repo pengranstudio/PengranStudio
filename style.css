@@ -374,43 +374,6 @@ html, body {
   opacity: 1;
 }
 
-@media (max-width: 768px) {
-  .scene-intro-card {
-    grid-template-columns: 1fr;
-  }
-
-  .scene-intro-text h2 {
-    font-size: 28px;
-  }
-
-  .scene-info-list p {
-    font-size: 15px;
-  }
-
-  .scene-gallery-section {
-    padding: 18px;
-  }
-
-  .carousel-main-image {
-    max-height: 360px;
-  }
-
-  .carousel-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-  }
-
-  .thumbnail-row {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .thumb {
-    height: 72px;
-  }
-}
-
-
 .traffic-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -481,6 +444,42 @@ html, body {
   display: block;
   width: 100%;
   min-height: 450px;
+}
+
+@media (max-width: 768px) {
+  .scene-intro-card {
+    grid-template-columns: 1fr;
+  }
+
+  .scene-intro-text h2 {
+    font-size: 28px;
+  }
+
+  .scene-info-list p {
+    font-size: 15px;
+  }
+
+  .scene-gallery-section {
+    padding: 18px;
+  }
+
+  .carousel-main-image {
+    max-height: 360px;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .thumbnail-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .thumb {
+    height: 72px;
+  }
 }
 
 @media (max-width: 768px) {
