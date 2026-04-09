@@ -157,7 +157,55 @@ img {
   line-height: 1.8;
   color: #6b5b50;
 }
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
 
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.lightbox-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.2);
+  border: none;
+  font-size: 30px;
+  color: white;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.lightbox-btn.prev {
+  left: 20px;
+}
+
+.lightbox-btn.next {
+  right: 20px;
+}
 /* ========================================
    6. 注意事項頁
 ======================================== */
