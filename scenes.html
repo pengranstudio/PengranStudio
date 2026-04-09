@@ -64,16 +64,16 @@
       </div>
 
       <div class="thumbnail-row">
-        <img src="image/Blue01.jpg" onclick="setSlide(0)" class="thumb active-thumb" alt="Blue01">
-        <img src="image/Blue02.jpg" onclick="setSlide(1)" class="thumb" alt="Blue02">
-        <img src="image/Blue03.jpg" onclick="setSlide(2)" class="thumb" alt="Blue03">
-        <img src="image/Blue04.jpg" onclick="setSlide(3)" class="thumb" alt="Blue04">
-        <img src="image/Blue05.jpg" onclick="setSlide(4)" class="thumb" alt="Blue05">
-        <img src="image/Blue06.jpg" onclick="setSlide(5)" class="thumb" alt="Blue06">
-        <img src="image/Blue07.jpg" onclick="setSlide(6)" class="thumb" alt="Blue07">
-        <img src="image/Blue08.jpg" onclick="setSlide(7)" class="thumb" alt="Blue08">
-        <img src="image/Blue09.jpg" onclick="setSlide(8)" class="thumb" alt="Blue09">
-        <img src="image/Blue10.jpg" onclick="setSlide(9)" class="thumb" alt="Blue10">
+        <img src="image/Blue01.jpg" onclick="openLightbox(0)" class="thumb active-thumb" alt="Blue01">
+        <img src="image/Blue02.jpg" onclick="openLightbox(1)" class="thumb" alt="Blue02">
+        <img src="image/Blue03.jpg" onclick="openLightbox(2)" class="thumb" alt="Blue03">
+        <img src="image/Blue04.jpg" onclick="openLightbox(3)" class="thumb" alt="Blue04">
+        <img src="image/Blue05.jpg" onclick="openLightbox(4)" class="thumb" alt="Blue05">
+        <img src="image/Blue06.jpg" onclick="openLightbox(5)" class="thumb" alt="Blue06">
+        <img src="image/Blue07.jpg" onclick="openLightbox(6)" class="thumb" alt="Blue07">
+        <img src="image/Blue08.jpg" onclick="openLightbox(7)" class="thumb" alt="Blue08">
+        <img src="image/Blue09.jpg" onclick="openLightbox(8)" class="thumb" alt="Blue09">
+        <img src="image/Blue10.jpg" onclick="openLightbox(9)" class="thumb" alt="Blue10">
       </div>
     </section>
 
@@ -133,7 +133,77 @@
       currentSlide = index;
       updateSlide();
     }
+
+
+
+    
+    
+const images = [
+  "images/Blue01.jpg",
+  "images/Blue02.jpg",
+  "images/Blue03.jpg",
+  "images/Blue04.jpg",
+  "images/Blue05.jpg",
+  "images/Blue06.jpg",
+  "images/Blue07.jpg",
+  "images/Blue08.jpg",
+  "images/Blue09.jpg",
+  "images/Blue10.jpg"
+];
+
+let currentIndex = 0;
+
+function openLightbox(index) {
+  currentIndex = index;
+  document.getElementById("lightbox").style.display = "flex";
+  updateLightbox();
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+function changeLightbox(step) {
+  currentIndex += step;
+
+  if (currentIndex < 0) currentIndex = images.length - 1;
+  if (currentIndex >= images.length) currentIndex = 0;
+
+  updateLightbox();
+}
+
+function updateLightbox() {
+  document.getElementById("lightbox-img").src = images[currentIndex];
+}
+
+// 手機滑動支援
+let startX = 0;
+
+document.getElementById("lightbox").addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+});
+
+document.getElementById("lightbox").addEventListener("touchend", e => {
+  let endX = e.changedTouches[0].clientX;
+
+  if (startX - endX > 50) changeLightbox(1);
+  if (endX - startX > 50) changeLightbox(-1);
+});
+
+
+    
   </script>
 
+
+
+  <div id="lightbox" class="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">×</span>
+
+  <img id="lightbox-img" class="lightbox-img">
+
+  <button class="lightbox-btn prev" onclick="changeLightbox(-1)">❮</button>
+  <button class="lightbox-btn next" onclick="changeLightbox(1)">❯</button>
+    
+</div>
 </body>
 </html>
